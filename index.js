@@ -28,6 +28,13 @@ app.get('/lucky', (req, res) => {
 
 });
 
+app.get('/random', function(req, res) {
+	var col = ['red','green','blue']
+    var num = Math.floor(Math.random() * 3);
+    var s= '<body bgcolor= "'+col[num]+'">';
+    res.send(s+'<h1>My lucky number =  ' + num+'</h1>');
+});
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log('Hello world listening on port', port);
