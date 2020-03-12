@@ -22,6 +22,12 @@ app.get('/', (req, res) => {
   res.send(`Hello ${target}!`);
 });
 
+app.get('/lucky', (req, res) => {
+  console.log('Generando un número aleatorio');
+  res.send('Numero al azar');
+
+});
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log('Hello world listening on port', port);
