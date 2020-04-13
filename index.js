@@ -36,7 +36,7 @@ app.get('/isi', (req, res) => {
 
 app.get('/random', function(req, res) {
 	var col = ['red','green','blue']
-    var num = Math.floor(Math.random() * 3);
+    var num = Math.floor(Math.random() * 5);
     var s= '<body bgcolor= "'+col[num]+'">';
     res.send(s+'<h1>My lucky number =  ' + num+'</h1>');
 });
