@@ -17,7 +17,7 @@ For pushes to the _default_ branch, `master`, the workflow will:
 
 1. Deploy the image to [Cloud Run](https://cloud.google.com/run/).
 
-1. In order to watch the deploy see this [URL] (https://unab-software-engineer-run-5m6n7sjhtq-ue.a.run.app).
+1. In order to watch the deploy see this [URL](https://unab-software-engineer-run-5m6n7sjhtq-ue.a.run.app).
 
 ## Setup
 
