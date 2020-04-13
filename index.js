@@ -40,7 +40,11 @@ app.get('/random', function(req, res) {
     var s= '<body bgcolor= "'+col[num]+'">';
     res.send(s+'<h1>My lucky number =  ' + num+'</h1>');
 });
-
+app.get('/callback', (req, res) => {
+  console.log('Aquí colocaremos un callback');
+  res.send('=========> ISI callback');
+  res.send('=========> ISI Rocks twice!');  
+});
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log('Hello world listening on port', port);
