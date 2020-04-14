@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   console.log('Hello world received a request.');
 
   const target = process.env.TARGET || 'World2';
-  res.send(`Hello ${target}!`);
+  res.send(`Hola ${target}!`);
 });
 
 app.get('/lucky', (req, res) => {
