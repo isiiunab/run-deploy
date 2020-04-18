@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   res.send(`Hello ${target}!`);
 });
 
-app.get('/lucky', (req, res) => {
+app.get('/suertudo', (req, res) => {
   console.log('Generando un número aleatorio');
   res.send('Numero al azar');
 
