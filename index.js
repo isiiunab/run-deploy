@@ -16,10 +16,8 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  console.log('Hello world received a request.');
-
-  const target = process.env.TARGET || 'World2';
-  res.send(`Hello ${target}!`);
+  console.log('Hello world received a request.');  
+  res.send(`Hola Mundo`);
 });
 
 app.get('/suertudo', (req, res) => {
