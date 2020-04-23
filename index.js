@@ -30,8 +30,7 @@ app.get('/lucky', (req, res) => {
 
 app.get('/isi', (req, res) => {
   console.log('Hola desde Ingeniería de software I');
-  res.send('=========> ISI Rocks!');
-  res.send('=========> ISI Rocks twice!');  
+  res.send('=========> ISI Rocks!');    
 });
 
 app.get('/random', function(req, res) {
