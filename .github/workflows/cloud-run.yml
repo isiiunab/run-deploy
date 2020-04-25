@@ -19,7 +19,7 @@ on:
     branches:
     - master
     - develop
-    - issue#[0-9]
+    - issue#[0-9]+[0-9]
 
 # Environment variables available to all jobs and steps in this workflow
 env:
