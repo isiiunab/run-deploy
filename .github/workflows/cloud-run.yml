@@ -19,6 +19,8 @@ on:
     branches:
     - master
     - develop
+    - issue#[0-9]+[0-9]
+    - release-[0-9]+.+[0-9]
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -35,6 +37,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
+      # Configura sonarCloud
+      - name: Inspección contínua
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # Setup gcloud CLI
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
@@ -46,7 +55,7 @@ jobs:
       - name: gcloud Set up
         run: |
           gcloud config set project $PROJECT_ID
-
+      
       # Build and push image to Google Container Registry
       - name: Build
         run: |
