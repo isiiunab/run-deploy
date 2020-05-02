@@ -15,6 +15,8 @@
 const express = require('express');
 const app = express();
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
   console.log('Hello world received a request.');  
   res.send(`Hola Mundo`);
@@ -31,9 +33,13 @@ app.get('/isoftware', (req, res) => {
   res.send('=========> ISI Rocks!');    
 });
 
-app.get('/tads', (req, res) => {
-  console.log('Hola desde Ingeniería de software I');
-  res.send('=========> ISI Rocks!');    
+app.get('/tads', async (req, res) => {
+  res.status(200).send({
+    status: true,
+    mensaje: `hola desde TADS`
+  });  
+  console.log('Hola desde TADS endpoint activate');
+      
 });
 
 app.get('/random', function(req, res) {
@@ -52,7 +58,4 @@ app.get('/callback', (req, res) => {
   res.send('=========> ISI callback');
   res.send('=========> ISI Rocks twice!');
 });
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log('Hello world listening on port', port);
-});
+module.exports = app

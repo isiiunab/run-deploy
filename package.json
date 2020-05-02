@@ -4,8 +4,9 @@
   "description": "Simple hello world sample in Node",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "jest"
+    "start": "node server.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "",
   "license": "Apache-2.0",
@@ -13,6 +14,7 @@
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "jest": "^25.5.3"
+    "jest": "^25.5.3",
+    "supertest": "^4.0.2"
   }
 }
