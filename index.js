@@ -16,46 +16,19 @@ const express = require('express');
 const app = express();
 
 app.use(express.json());
+app.disable('x-powered-by');
 
 app.get('/', (req, res) => {
-  console.log('Hello world received a request.');  
-  res.send(`Hola Mundo`);
+    res.send(`Hola Mundo`);
+    console.log('Hello world received a request.');    
 });
 
-app.get('/suertudo', (req, res) => {
-  console.log('Generando un número aleatorio');
-  res.send('Numero al azar');
-
+app.get('/isi', async (req, res) => {
+    res.status(200).send({
+      status: true,
+      mensaje: `===> Ingeniería de software!`
+    });  
+    console.log('Hola desde TADS endpoint activate');      
 });
 
-app.get('/isoftware', (req, res) => {
-  console.log('Hola desde Ingeniería de software I');
-  res.send('=========> ISI Rocks!');    
-});
-
-app.get('/tads', async (req, res) => {
-  res.status(200).send({
-    status: true,
-    mensaje: `hola desde TADS`
-  });  
-  console.log('Hola desde TADS endpoint activate');
-      
-});
-
-app.get('/random', function(req, res) {
-	var col = ['red','green','blue']
-    var num = Math.floor(Math.random() * 3);
-    var s= '<body bgcolor= "'+col[num]+'">';
-    res.send(s+'<h1>My lucky number =  ' + num+'</h1>');
-});
-app.get('/unab', (req, res) => {
-  console.log('Hola UNAB');
-  res.send('=========> Hola Ingenieria de Software UNAB!');
-  res.send('=========> ISI Rocks twice!');
-});
-app.get('/callback', (req, res) => {
-  console.log('Aquí colocaremos un callback');
-  res.send('=========> ISI callback');
-  res.send('=========> ISI Rocks twice!');
-});
 module.exports = app
