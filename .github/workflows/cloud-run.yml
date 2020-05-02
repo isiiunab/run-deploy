@@ -41,7 +41,7 @@ jobs:
       - name: Testing
         uses: stefanoeb/jest-action@1.0.2
         with: 
-          jestArgs: test/ 
+          jestArgs: --coverage test/ 
           
       # Configura sonarCloud
       - name: Inspección contínua
