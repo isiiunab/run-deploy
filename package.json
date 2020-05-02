@@ -14,7 +14,17 @@
     "express": "^4.16.4"
   },
   "devDependencies": {
+    "i": "^0.3.6",
     "jest": "^25.5.3",
+    "jest-sonar-reporter": "^2.0.0",
     "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter"
+  },
+  "jestSonar": {
+    "reportPath": "test/coverage",
+    "reportFile": "sonar-cloud-reporter.xml",
+    "indent": 4
   }
 }

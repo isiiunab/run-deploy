@@ -37,6 +37,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
+      # Pipeline para Testing, ejecuta npm install automáticamente
+      - name: Testing
+        uses: stefanoeb/jest-action@1.0.2
+        with: 
+          jestArgs: test/ 
+          
       # Configura sonarCloud
       - name: Inspección contínua
         uses: sonarsource/sonarcloud-github-action@master
@@ -44,11 +50,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      # Pipeline para Testing, ejecuta npm install automáticamente
-      - name: Testing
-        uses: stefanoeb/jest-action@1.0.2
-        with: 
-          jestArgs: test/
+      
 
       # Setup gcloud CLI
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
