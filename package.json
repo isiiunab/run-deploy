@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "author": "",
@@ -23,7 +23,7 @@
     "testResultsProcessor": "jest-sonar-reporter"
   },
   "jestSonar": {
-    "reportPath": "test/coverage",
+    "reportPath": "coverage",
     "reportFile": "sonar-cloud-reporter.xml",
     "indent": 4
   }
