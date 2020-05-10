@@ -23,6 +23,9 @@ on:
     - release-[0-9]+.+[0-9]
   pull_request:
     types: [assigned, opened, synchronize, reopened]
+  schedule:    
+   - cron: '0 0 * * SUN'    
+
 # Environment variables available to all jobs and steps in this workflow
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
