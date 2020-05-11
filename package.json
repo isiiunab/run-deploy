@@ -1,14 +1,14 @@
 {
-  "name": "helloworld",
+  "name": "isiiunab-template",
   "version": "1.3.0",
-  "description": "Simple hello world sample in Node",
+  "description": "Simple API template",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
-  "author": "",
+  "author": "isiiunab",
   "license": "Apache-2.0",
   "dependencies": {
     "express": "^4.16.4"
