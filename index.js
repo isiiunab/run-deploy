@@ -17,4 +17,12 @@ app.get('/isi', async (req, res) => {
     console.log('Hola desde TADS endpoint activate');      
 });
 
+app.get('/eco', async (req, res) => {
+  res.status(200).send({
+    status: true,
+    mensaje: `eco`
+  });  
+  console.log('TEST');      
+});
+
 module.exports = app

@@ -8,3 +8,10 @@ it('Probando endpoint /is async', async done => {
     expect(res.body.mensaje).toBe('===> Ingeniería de software!');
     done();
 });
+
+it('Probando endpoint /eco async', async done => {
+    const res = await request.get('/eco');
+    expect(res.statusCode).toBe(200);
+    expect(res.body.mensaje).toBe('eco');
+    done();
+});
