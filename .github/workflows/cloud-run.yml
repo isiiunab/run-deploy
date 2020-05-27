@@ -4,15 +4,14 @@ on:
   push:
     branches:
     - master
-    - develop
-    - issue#[0-9]+[0-9]
+    - develop    
     - release-[0-9]+.+[0-9]
   pull_request:
     types: [assigned, opened, synchronize, reopened]
   schedule:    
    - cron: '0 0 * * SUN'    
 
-# Environment variables available to all jobs and steps in this workflow
+
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
   RUN_REGION: us-east1
@@ -27,40 +26,33 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      # Pipeline para Testing, ejecuta npm install automáticamente
+      # Ejecuta npm install automáticamente
       - name: Testing
         uses: stefanoeb/jest-action@1.0.2
         with: 
-          jestArgs: --coverage test/ 
-          
-      # Configura sonarCloud
+          jestArgs: --coverage test/           
+      
       - name: Inspección contínua
         uses: sonarsource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
-      # Setup gcloud CLI
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
-          version: '275.0.0'
+          version: '290.0.1'
           service_account_email: ${{ secrets.SA_EMAIL }}
           service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-
-      # Configure gcloud CLI
+      
       - name: gcloud Set up
         run: |
-          gcloud config set project $PROJECT_ID
+          gcloud config set project $PROJECT_ID      
       
-      # Build and push image to Google Container Registry
       - name: Build
         run: |
           gcloud builds submit -t gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
-
-      # Deploy image to Cloud Run
-      - name: Deploy
+      
+      - name: Deploy to Cloud Run
         run: |
           gcloud run deploy $SERVICE_NAME \
             --region $RUN_REGION \
