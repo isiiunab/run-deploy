@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
     console.log('Hello world received a request.');    
 });
 
-app.get('/isi', async (req, res) => {
+app.get('/unab', async (req, res) => {
     res.status(200).send({
       status: true,
       mensaje: `===> Ingeniería de software!`

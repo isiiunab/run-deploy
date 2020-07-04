@@ -4,8 +4,8 @@ const request = supertest(app);
 
 
 describe('Probanod endpoints', () => {
-    it('Probando endpoint /isi async', async done => {
-        const res = await request.get('/isi');
+    it('Probando endpoint /unab async', async done => {
+        const res = await request.get('/unab');
         expect(res.statusCode).toBe(200);
         expect(res.body.mensaje).toBe('===> Ingeniería de software!');
         done();
