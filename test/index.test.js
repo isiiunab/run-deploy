@@ -10,10 +10,10 @@ describe('Probanod endpoints', () => {
         expect(res.body.mensaje).toBe('===> Ingeniería de software!');
         done();
     });
-    it('Probando endpoint /echo', async done => {
-        const res = await request.get('/echo');
+    it('Probando endpoint /tads', async done => {
+        const res = await request.get('/tads');
         expect(res.statusCode).toBe(200);        
-        expect(res.body.mensaje).toBe('echo');  
+        expect(res.body.mensaje).toBe('Hola Tads!');  
         done();      
     });
 })

@@ -17,10 +17,10 @@ app.get('/unab', async (req, res) => {
     console.log('Hola desde TADS endpoint activate');      
 });
 
-app.get('/echo', async (req, res) => {
+app.get('/tads', async (req, res) => {
   res.status(200).send({
     status: true,
-    mensaje: `echo`
+    mensaje: `Hola Tads!`
   });  
   console.log('Hola desde TADS endpoint activate');      
 });
