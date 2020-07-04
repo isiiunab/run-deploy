@@ -24,5 +24,11 @@ app.get('/echo', async (req, res) => {
   });  
   console.log('Hola desde TADS endpoint activate');      
 });
-
+app.get('/tads', async (req, res) => {
+  res.status(200).send({
+    status: true,
+    mensaje: `Saludo desde TADS!`
+  });  
+  console.log('Saludo desde TADS!');      
+});
 module.exports = app

@@ -16,4 +16,10 @@ describe('Probanod endpoints', () => {
         expect(res.body.mensaje).toBe('echo');  
         done();      
     });
+    it('Probando endpoint /tads', async done => {
+        const res = await request.get('/tads');
+        expect(res.statusCode).toBe(200);        
+        expect(res.body.mensaje).toBe('Saludo desde TADS!');  
+        done();      
+    });
 })
