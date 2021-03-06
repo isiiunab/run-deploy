@@ -1,4 +1,4 @@
-# Cloud Run - GitHub Actions
+# Cloud Run - gitHub Actions
 
 An example workflow that uses [GitHub Actions](https://help.github.com/en/categories/automating-your-workflow-with-github-actions) to deploy a [Hello World Node.js app](index.js) to [Cloud Run (Fully Managed)](https://cloud.google.com/run/).
 
