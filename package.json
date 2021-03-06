@@ -18,7 +18,7 @@
     "jest": "^25.5.3",
     "jest-sonar-reporter": "^2.0.0",
     "supertest": "^4.0.2",
-    "node-notifier": ">=8.0.1" ,
+    "node-notifier": ">=8.0.1",
     "lodash": ">=4.17.19"
   },
   "jest": {
