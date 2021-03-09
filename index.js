@@ -20,7 +20,7 @@ app.get('/unab', async (req, res) => {
 app.get('/tads', async (req, res) => {
   res.status(200).send({
     status: true,
-    mensaje: `Hola Tads!`
+    mensaje: `Devops TADS 2021`
   });  
   console.log('Hola desde TADS endpoint activate');      
 });

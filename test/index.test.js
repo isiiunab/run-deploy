@@ -13,7 +13,7 @@ describe('Probanod endpoints', () => {
     it('Probando endpoint /tads', async done => {
         const res = await request.get('/tads');
         expect(res.statusCode).toBe(200);        
-        expect(res.body.mensaje).toBe('Hola Tads!');  
+        expect(res.body.mensaje).toBe('Devops TADS 2021');  
         done();      
     });
 })
