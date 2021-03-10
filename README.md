@@ -1,75 +1,76 @@
-# Cloud Run - gitHub Actions
+# Cloud Run - Acciones de gitHub
 
-An example workflow that uses [GitHub Actions](https://help.github.com/en/categories/automating-your-workflow-with-github-actions) to deploy a [Hello World Node.js app](index.js) to [Cloud Run (Fully Managed)](https://cloud.google.com/run/).
+Un flujo de trabajo de ejemplo que usa [Acciones de GitHub] (https://help.github.com/en/categories/automating-your-workflow-with-github-actions) para implementar una [aplicación Hello World Node.js] (index. js) a [Cloud Run (completamente administrado)] (https://cloud.google.com/run/).
 
-## Workflow
+## Flujo de trabajo
 
-For pushes to the _default_ branch, `master`, the workflow will:
+Para los envíos al _default_ branch, `master`, el flujo de trabajo:
 
-1. Verify the Google Cloud Platform credentials are correct.
+1. Verifique que las credenciales de Google Cloud Platform sean correctas.
 
-1. Build, tag, and push the image to Google Container Registry.
+1. Cree, etiquete y envíe la imagen a Google Container Registry.
 
-    * The image is built using Cloud Build and pushed to Google Container Registry.
+    * La imagen se crea con Cloud Build y se envía a Google Container Registry.
 
-    * The image is available through the following tags: `latest` and first 8 of
-    the commit SHA.
+    * La imagen está disponible a través de las siguientes etiquetas: `latest` y first 8 of
+    el compromiso SHA.
 
-1. Deploy the image to [Cloud Run](https://cloud.google.com/run/).
+1. Implemente la imagen en [Cloud Run] (https://cloud.google.com/run/).
 
-1. In order to watch the deploy see this [URL](https://unab-software-engineer-run-5m6n7sjhtq-ue.a.run.app).
+1. Para ver la implementación, vea esta [URL] (https://unab-software-engineer-run-5m6n7sjhtq-ue.a.run.app).
 
-## Setup
+## Configuración
 
-1. Create or reuse a Github repository for the example workflow:
+1. Cree o reutilice un repositorio de Github para el flujo de trabajo de ejemplo:
 
-  1. [Create a repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository).
+  1. [Cree un repositorio] (https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository).
 
-  1. Move into your repository directory.
+  1. Muévase a su directorio de repositorio.
 
-  1. Copy the example into the repository:
+  1. Copie el ejemplo en el repositorio:
+  
   ```
-  cp -r <path_to>/github-actions/example-workflows/cloud-run/ ./
+  cp -r <ruta_a> / github-actions / example-workflows / cloud-run / ./
   ```
+  
+1. Agregue su ID de proyecto al [secreto del repositorio] [secretos], llamado `RUN_PROJECT`.
 
-1. Add your Project Id to the [repository's secret][secrets], named `RUN_PROJECT`.
+1. Actualice `cloud-run.yml` con los siguientes valores:
 
-1. Update `cloud-run.yml` with the following values:
+  * `RUN_REGION`: la región en la que se implementará el recurso.
 
-  * `RUN_REGION`: the region in which the resource will be deployed.
+  * `SERVICE_NAME`: su nombre preferido de su servicio e imagen.
 
-  * `SERVICE_NAME`: your preferred name of your service and image.
+1. [Agregue el siguiente rol a su cuenta de servicio] [roles]:
 
-1. [Add the the following role to your service account][roles]:
+  * `Cloud Run Admin - roles / run.admin`: permite la creación de nuevos servicios
+  * `Viewer - roles / viewer`: permite ver el proyecto (necesario para acceder al almacenamiento)
+  * `Cuenta de servicio de Cloud Build - roles / cloudbuild.builds.builder`: permite
+    ejecutar y manipular los recursos de Cloud Build y Storage
+  * `Usuario de cuenta de servicio - roles / iam.serviceAccountUser`: requisito de actAs
 
-  * `Cloud Run Admin - roles/run.admin`: allows for the creation of new services
-  * `Viewer - roles/viewer`: allows for viewing the project (needed for Storage access)
-  * `Cloud Build Service Account - roles/cloudbuild.builds.builder`: allows for
-    running and manipulating Cloud Build and Storage resources
-  * `Service Account User - roles/iam.serviceAccountUser`: actAs requirement
+1. Habilite [Cloud Run API y Cloud Build API.] (Https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com,run.googleapis.com&redirect=https://console .cloud.google.com & _ga = 2.248833607.-1346582427.1578963531).
 
-1. Enable the [Cloud Run API and Cloud Build API.](https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com,run.googleapis.com&redirect=https://console.cloud.google.com&_ga=2.248833607.-1346582427.1578963531).
+## Ejecutar el flujo de trabajo
 
-## Run the workflow
-
-1. Add and commit your changes:
+1. Agregue y confirme sus cambios:
 ```
-git add .
-git commit -m "Set up Github workflow"
+git add.
+git commit -m "Configurar el flujo de trabajo de Github"
 ```
 
-1. Push to the `master` branch:
+1. Envie a la rama `master`:
 ```
 git push origin master
 ```
 
-1. View the workflow by selecting the `Actions` tab at the top of your repository.
-Then click on the `Build and Deploy to Cloud Run` workflow to see the details.
+1. Vea el flujo de trabajo seleccionando la pestaña `Actions` en la parte superior de su repositorio.
+Luego haga clic en el flujo de trabajo `Construir e implementar en Cloud Run` para ver los detalles.
 
-**Note**: If this is your first Cloud Run deployment, your image will not allow
-unauthenticated requests. If this is a service revision, then your service will
-persist the current setting. Learn more about [allowing public access](https://cloud.google.com/run/docs/authenticating/public).
+** Nota **: Si esta es su primera implementación de Cloud Run, su imagen no permitirá
+solicitudes no autenticadas. Si se trata de una revisión de servicio, entonces su servicio
+persistir en la configuración actual. Obtenga más información sobre [permitir el acceso público] (https://cloud.google.com/run/docs/authenticating/public).
 
-[secrets]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets
-[cluster]: https://cloud.google.com/kubernetes-engine/docs/quickstart#create_cluster
+[secretos]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets
+[clúster]: https://cloud.google.com/kubernetes-engine/docs/quickstart#create_cluster
 [roles]: https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource
