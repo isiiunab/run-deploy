@@ -49,7 +49,7 @@ Para los envíos al _default_ branch, `master`, el flujo de trabajo:
     ejecutar y manipular los recursos de Cloud Build y Storage
   * `Usuario de cuenta de servicio - roles / iam.serviceAccountUser`: requisito de actAs
 
-1. Habilite [Cloud Run API y Cloud Build API.](Https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com,run.googleapis.com&redirect=https://console .cloud.google.com & _ga = 2.248833607.-1346582427.1578963531).
+1. Habilite [Cloud Run API and Cloud Build API.](https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com,run.googleapis.com&redirect=https://console.cloud.google.com&_ga=2.248833607.-1346582427.1578963531).
 
 ## Ejecutar el flujo de trabajo
 
