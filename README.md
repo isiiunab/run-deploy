@@ -1,6 +1,6 @@
 # Cloud Run - Acciones de gitHub
 
-Un flujo de trabajo de ejemplo que usa [Acciones de GitHub](https://help.github.com/en/categories/automating-your-workflow-with-github-actions) para implementar una [aplicación Hello World Node.js](index. js) a [Cloud Run (completamente administrado)](https://cloud.google.com/run/).
+Un flujo de trabajo de ejemplo que usa [Acciones de GitHub](https://help.github.com/en/categories/automating-your-workflow-with-github-actions) para implementar una [Hello World Node.js app](index.js) a [Cloud Run (completamente administrado)](https://cloud.google.com/run/).
 
 ## Flujo de trabajo
 
