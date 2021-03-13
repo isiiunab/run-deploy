@@ -1,6 +1,6 @@
 # Cloud Run - Acciones de gitHub
 
-Un flujo de trabajo de ejemplo que usa [Acciones de GitHub] (https://help.github.com/en/categories/automating-your-workflow-with-github-actions) para implementar una [aplicación Hello World Node.js] (index. js) a [Cloud Run (completamente administrado)] (https://cloud.google.com/run/).
+Un flujo de trabajo de ejemplo que usa [Acciones de GitHub](https://help.github.com/en/categories/automating-your-workflow-with-github-actions) para implementar una [aplicación Hello World Node.js](index. js) a [Cloud Run (completamente administrado)](https://cloud.google.com/run/).
 
 ## Flujo de trabajo
 
@@ -15,15 +15,15 @@ Para los envíos al _default_ branch, `master`, el flujo de trabajo:
     * La imagen está disponible a través de las siguientes etiquetas: `latest` y first 8 of
     el compromiso SHA.
 
-1. Implemente la imagen en [Cloud Run] (https://cloud.google.com/run/).
+1. Implemente la imagen en [Cloud Run](https://cloud.google.com/run/).
 
-1. Para ver la implementación, vea esta [URL] (https://unab-software-engineer-run-5m6n7sjhtq-ue.a.run.app).
+1. Para ver la implementación, vea esta [URL](https://unab-software-engineer-run-5m6n7sjhtq-ue.a.run.app).
 
 ## Configuración
 
 1. Cree o reutilice un repositorio de Github para el flujo de trabajo de ejemplo:
 
-  1. [Cree un repositorio] (https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository).
+  1. [Cree un repositorio](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository).
 
   1. Muévase a su directorio de repositorio.
 
@@ -49,7 +49,7 @@ Para los envíos al _default_ branch, `master`, el flujo de trabajo:
     ejecutar y manipular los recursos de Cloud Build y Storage
   * `Usuario de cuenta de servicio - roles / iam.serviceAccountUser`: requisito de actAs
 
-1. Habilite [Cloud Run API y Cloud Build API.] (Https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com,run.googleapis.com&redirect=https://console .cloud.google.com & _ga = 2.248833607.-1346582427.1578963531).
+1. Habilite [Cloud Run API y Cloud Build API.](Https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com,run.googleapis.com&redirect=https://console .cloud.google.com & _ga = 2.248833607.-1346582427.1578963531).
 
 ## Ejecutar el flujo de trabajo
 
@@ -69,7 +69,7 @@ Luego haga clic en el flujo de trabajo `Construir e implementar en Cloud Run` pa
 
 ** Nota **: Si esta es su primera implementación de Cloud Run, su imagen no permitirá
 solicitudes no autenticadas. Si se trata de una revisión de servicio, entonces su servicio
-persistir en la configuración actual. Obtenga más información sobre [permitir el acceso público] (https://cloud.google.com/run/docs/authenticating/public).
+persistir en la configuración actual. Obtenga más información sobre [permitir el acceso público](https://cloud.google.com/run/docs/authenticating/public).
 
 [secretos]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets
 [clúster]: https://cloud.google.com/kubernetes-engine/docs/quickstart#create_cluster
