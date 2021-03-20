@@ -16,4 +16,6 @@ build:
 run:
 			docker run --rm -p 8080:8080  $(BUILD_IMAGE)
 test:
-			npm test			
+			npm test
+			
+						
