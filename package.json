@@ -14,7 +14,7 @@
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "jest": "^25.5.3",
     "jest-sonar-reporter": "^2.0.0",
     "lodash": ">=4.17.19",
